@@ -1,0 +1,1 @@
+/home/noobinventor/parc_ws/src/build/parc_robot_description/ament_cmake_core/parc_robot_descriptionConfig-version.cmake

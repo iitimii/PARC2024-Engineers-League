@@ -16,11 +16,13 @@
           izz="0.0003973"/>
       </inertial>
       <visual>
+        <origin xyz="0.0 0.015 0.0" rpy="0 -${pi/2} 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>
       </visual>
       <collision>
+        <origin xyz="0.0 0.015 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>
@@ -93,11 +95,13 @@
           izz="0.0003973"/>
       </inertial>
       <visual>
+        <origin xyz="0.0 0.015 0.0" rpy="0 ${pi/2} 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>
       </visual>
       <collision>
+        <origin xyz="0.0 0.015 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>

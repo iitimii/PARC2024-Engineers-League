@@ -1,0 +1,16 @@
+[1.924s] Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_control': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_control/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_control/build --no-deps install_data
+[2.170s] running develop
+[2.354s] running egg_info
+[2.354s] writing parc_robot_control.egg-info/PKG-INFO
+[2.355s] writing dependency_links to parc_robot_control.egg-info/dependency_links.txt
+[2.355s] writing entry points to parc_robot_control.egg-info/entry_points.txt
+[2.355s] writing requirements to parc_robot_control.egg-info/requires.txt
+[2.355s] writing top-level names to parc_robot_control.egg-info/top_level.txt
+[2.356s] reading manifest file 'parc_robot_control.egg-info/SOURCES.txt'
+[2.357s] writing manifest file 'parc_robot_control.egg-info/SOURCES.txt'
+[2.383s] running build_ext
+[2.383s] Creating /home/noobinventor/parc_ws/src/install/parc_robot_control/lib/python3.10/site-packages/parc-robot-control.egg-link (link to .)
+[2.384s] 
+[2.384s] Installed /home/noobinventor/parc_ws/src/build/parc_robot_control
+[2.384s] running install_data
+[2.511s] Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_control' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_control/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_control/build --no-deps install_data

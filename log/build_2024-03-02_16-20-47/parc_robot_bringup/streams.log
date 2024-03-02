@@ -1,0 +1,23 @@
+[2.320s] Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_bringup': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_bringup/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_bringup/build --no-deps install_data
+[2.576s] running develop
+[2.764s] running egg_info
+[2.764s] creating parc_robot_bringup.egg-info
+[2.764s] writing parc_robot_bringup.egg-info/PKG-INFO
+[2.765s] writing dependency_links to parc_robot_bringup.egg-info/dependency_links.txt
+[2.765s] writing entry points to parc_robot_bringup.egg-info/entry_points.txt
+[2.765s] writing requirements to parc_robot_bringup.egg-info/requires.txt
+[2.766s] writing top-level names to parc_robot_bringup.egg-info/top_level.txt
+[2.767s] writing manifest file 'parc_robot_bringup.egg-info/SOURCES.txt'
+[2.767s] reading manifest file 'parc_robot_bringup.egg-info/SOURCES.txt'
+[2.768s] writing manifest file 'parc_robot_bringup.egg-info/SOURCES.txt'
+[2.793s] running build_ext
+[2.793s] Creating /home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/python3.10/site-packages/parc-robot-bringup.egg-link (link to .)
+[2.793s] 
+[2.793s] Installed /home/noobinventor/parc_ws/src/build/parc_robot_bringup
+[2.793s] running install_data
+[2.793s] creating /home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/ament_index
+[2.794s] creating /home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/ament_index/resource_index
+[2.794s] creating /home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/ament_index/resource_index/packages
+[2.794s] copying resource/parc_robot_bringup -> /home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/ament_index/resource_index/packages
+[2.794s] copying package.xml -> /home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup
+[2.843s] Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_bringup' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_bringup/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_bringup/build --no-deps install_data

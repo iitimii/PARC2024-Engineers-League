@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating parc_robot_gazebo.egg-info
+writing parc_robot_gazebo.egg-info/PKG-INFO
+writing dependency_links to parc_robot_gazebo.egg-info/dependency_links.txt
+writing entry points to parc_robot_gazebo.egg-info/entry_points.txt
+writing requirements to parc_robot_gazebo.egg-info/requires.txt
+writing top-level names to parc_robot_gazebo.egg-info/top_level.txt
+writing manifest file 'parc_robot_gazebo.egg-info/SOURCES.txt'
+reading manifest file 'parc_robot_gazebo.egg-info/SOURCES.txt'
+writing manifest file 'parc_robot_gazebo.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/noobinventor/parc_ws/src/install/parc_robot_gazebo/lib/python3.10/site-packages/parc-robot-gazebo.egg-link (link to .)
+
+Installed /home/noobinventor/parc_ws/src/build/parc_robot_gazebo
+running install_data
+creating /home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/ament_index
+creating /home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/ament_index/resource_index
+creating /home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/ament_index/resource_index/packages
+copying resource/parc_robot_gazebo -> /home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/ament_index/resource_index/packages
+copying package.xml -> /home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo

@@ -1,0 +1,345 @@
+[1.002s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.002s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f5e825ecd00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f5e825ed060>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f5e825ed060>>, mixin_verb=('build',))
+[1.035s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.035s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.035s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.035s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.035s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.035s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.035s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/noobinventor/parc_ws/src'
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.042s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extensions ['ignore', 'ignore_ament_install']
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extension 'ignore'
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extension 'ignore_ament_install'
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extensions ['colcon_pkg']
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extension 'colcon_pkg'
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extensions ['colcon_meta']
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extension 'colcon_meta'
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extensions ['ros']
+[1.043s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot) by extension 'ros'
+[1.044s] DEBUG:colcon.colcon_core.package_identification:Package 'parc_robot' with type 'ros.ament_python' and name 'parc_robot'
+[1.044s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extension 'ignore'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extension 'ignore_ament_install'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extensions ['colcon_pkg']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extension 'colcon_pkg'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extensions ['colcon_meta']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extension 'colcon_meta'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extensions ['ros']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_bringup) by extension 'ros'
+[1.045s] DEBUG:colcon.colcon_core.package_identification:Package 'parc_robot_bringup' with type 'ros.ament_python' and name 'parc_robot_bringup'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extensions ['ignore', 'ignore_ament_install']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extension 'ignore'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extension 'ignore_ament_install'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extensions ['colcon_pkg']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extension 'colcon_pkg'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extensions ['colcon_meta']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extension 'colcon_meta'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extensions ['ros']
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_control) by extension 'ros'
+[1.045s] DEBUG:colcon.colcon_core.package_identification:Package 'parc_robot_control' with type 'ros.ament_python' and name 'parc_robot_control'
+[1.045s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extensions ['ignore', 'ignore_ament_install']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extension 'ignore'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extension 'ignore_ament_install'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extensions ['colcon_pkg']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extension 'colcon_pkg'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extensions ['colcon_meta']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extension 'colcon_meta'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extensions ['ros']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_description) by extension 'ros'
+[1.046s] DEBUG:colcon.colcon_core.package_identification:Package 'parc_robot_description' with type 'ros.ament_cmake' and name 'parc_robot_description'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extension 'ignore'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extension 'ignore_ament_install'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extensions ['colcon_pkg']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extension 'colcon_pkg'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extensions ['colcon_meta']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extension 'colcon_meta'
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extensions ['ros']
+[1.046s] Level 1:colcon.colcon_core.package_identification:_identify(parc_robot_gazebo) by extension 'ros'
+[1.046s] DEBUG:colcon.colcon_core.package_identification:Package 'parc_robot_gazebo' with type 'ros.ament_python' and name 'parc_robot_gazebo'
+[1.046s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.046s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.046s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.046s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.047s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.144s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/noobinventor/parc_ws/install
+[1.156s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/noobinventor/akabot_ws/install
+[1.169s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 8 installed packages in /home/noobinventor/lidarbot_ws/install
+[1.181s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/noobinventor/forklift_ws/install
+[1.193s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/noobinventor/mpu_ws/install
+[1.206s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 421 installed packages in /opt/ros/humble
+[1.207s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'cmake_args' from command line to 'None'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'cmake_target' from command line to 'None'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'cmake_clean_cache' from command line to 'False'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'cmake_clean_first' from command line to 'False'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'cmake_force_configure' from command line to 'False'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'ament_cmake_args' from command line to 'None'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'catkin_cmake_args' from command line to 'None'
+[1.276s] Level 5:colcon.colcon_core.verb:set package 'parc_robot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.276s] DEBUG:colcon.colcon_core.verb:Building package 'parc_robot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noobinventor/parc_ws/src/build/parc_robot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noobinventor/parc_ws/src/install/parc_robot', 'merge_install': False, 'path': '/home/noobinventor/parc_ws/src/parc_robot', 'symlink_install': True, 'test_result_base': None}
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'cmake_args' from command line to 'None'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'cmake_target' from command line to 'None'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[1.288s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.288s] DEBUG:colcon.colcon_core.verb:Building package 'parc_robot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noobinventor/parc_ws/src/build/parc_robot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noobinventor/parc_ws/src/install/parc_robot_bringup', 'merge_install': False, 'path': '/home/noobinventor/parc_ws/src/parc_robot_bringup', 'symlink_install': True, 'test_result_base': None}
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'cmake_args' from command line to 'None'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'cmake_target' from command line to 'None'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'cmake_clean_cache' from command line to 'False'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'cmake_clean_first' from command line to 'False'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'cmake_force_configure' from command line to 'False'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'ament_cmake_args' from command line to 'None'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'catkin_cmake_args' from command line to 'None'
+[1.299s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.299s] DEBUG:colcon.colcon_core.verb:Building package 'parc_robot_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noobinventor/parc_ws/src/build/parc_robot_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noobinventor/parc_ws/src/install/parc_robot_control', 'merge_install': False, 'path': '/home/noobinventor/parc_ws/src/parc_robot_control', 'symlink_install': True, 'test_result_base': None}
+[1.311s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'cmake_args' from command line to 'None'
+[1.311s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'cmake_target' from command line to 'None'
+[1.311s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.311s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[1.311s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'cmake_clean_first' from command line to 'False'
+[1.312s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'cmake_force_configure' from command line to 'False'
+[1.312s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'ament_cmake_args' from command line to 'None'
+[1.312s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[1.312s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.312s] DEBUG:colcon.colcon_core.verb:Building package 'parc_robot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noobinventor/parc_ws/src/build/parc_robot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noobinventor/parc_ws/src/install/parc_robot_description', 'merge_install': False, 'path': '/home/noobinventor/parc_ws/src/parc_robot_description', 'symlink_install': True, 'test_result_base': None}
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'cmake_args' from command line to 'None'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'cmake_target' from command line to 'None'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[1.323s] Level 5:colcon.colcon_core.verb:set package 'parc_robot_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.323s] DEBUG:colcon.colcon_core.verb:Building package 'parc_robot_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/noobinventor/parc_ws/src/build/parc_robot_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo', 'merge_install': False, 'path': '/home/noobinventor/parc_ws/src/parc_robot_gazebo', 'symlink_install': True, 'test_result_base': None}
+[1.334s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.346s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.346s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/noobinventor/parc_ws/src/parc_robot' with build type 'ament_python'
+[1.346s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot', 'ament_prefix_path')
+[1.359s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.359s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/hook/ament_prefix_path.ps1'
+[1.359s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/hook/ament_prefix_path.dsv'
+[1.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/hook/ament_prefix_path.sh'
+[1.371s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.371s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.471s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/noobinventor/parc_ws/src/parc_robot_bringup' with build type 'ament_python'
+[1.471s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_bringup', 'ament_prefix_path')
+[1.484s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/hook/ament_prefix_path.ps1'
+[1.484s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/hook/ament_prefix_path.dsv'
+[1.484s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/hook/ament_prefix_path.sh'
+[1.496s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.496s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.582s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/noobinventor/parc_ws/src/parc_robot_control' with build type 'ament_python'
+[1.582s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_control', 'ament_prefix_path')
+[1.594s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/hook/ament_prefix_path.ps1'
+[1.595s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/hook/ament_prefix_path.dsv'
+[1.595s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/hook/ament_prefix_path.sh'
+[1.607s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.607s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.691s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/noobinventor/parc_ws/src/parc_robot_description' with build type 'ament_cmake'
+[1.691s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/noobinventor/parc_ws/src/parc_robot_description'
+[1.703s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.703s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.785s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/noobinventor/parc_ws/src/parc_robot_gazebo' with build type 'ament_python'
+[1.785s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_gazebo', 'ament_prefix_path')
+[1.797s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/hook/ament_prefix_path.ps1'
+[1.798s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/hook/ament_prefix_path.dsv'
+[1.798s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/hook/ament_prefix_path.sh'
+[1.809s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.810s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.114s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/noobinventor/parc_ws/src/parc_robot'
+[2.126s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.126s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.409s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/noobinventor/parc_ws/src/parc_robot_bringup'
+[2.422s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.422s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.706s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/noobinventor/parc_ws/src/parc_robot_control'
+[2.717s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.717s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.817s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/noobinventor/parc_ws/install/parc_robot_gazebo:/home/noobinventor/parc_ws/install/parc_robot_description:/home/noobinventor/parc_ws/install/parc_robot_control:/home/noobinventor/parc_ws/install/parc_robot_bringup:/home/noobinventor/parc_ws/install/parc_robot:/opt/ros/humble /usr/bin/cmake --build /home/noobinventor/parc_ws/src/build/parc_robot_description -- -j16 -l16
+[3.026s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/noobinventor/parc_ws/src/parc_robot_gazebo'
+[3.038s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.038s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.135s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/noobinventor/parc_ws/install/parc_robot_gazebo:/home/noobinventor/parc_ws/install/parc_robot_description:/home/noobinventor/parc_ws/install/parc_robot_control:/home/noobinventor/parc_ws/install/parc_robot_bringup:/home/noobinventor/parc_ws/install/parc_robot:/opt/ros/humble /usr/bin/cmake --build /home/noobinventor/parc_ws/src/build/parc_robot_description -- -j16 -l16
+[3.152s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/noobinventor/parc_ws/install/parc_robot_gazebo:/home/noobinventor/parc_ws/install/parc_robot_description:/home/noobinventor/parc_ws/install/parc_robot_control:/home/noobinventor/parc_ws/install/parc_robot_bringup:/home/noobinventor/parc_ws/install/parc_robot:/opt/ros/humble /usr/bin/cmake --install /home/noobinventor/parc_ws/src/build/parc_robot_description
+[3.167s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(parc_robot_description)
+[3.169s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/noobinventor/parc_ws/install/parc_robot_gazebo:/home/noobinventor/parc_ws/install/parc_robot_description:/home/noobinventor/parc_ws/install/parc_robot_control:/home/noobinventor/parc_ws/install/parc_robot_bringup:/home/noobinventor/parc_ws/install/parc_robot:/opt/ros/humble /usr/bin/cmake --install /home/noobinventor/parc_ws/src/build/parc_robot_description
+[3.201s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description' for CMake module files
+[3.202s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description' for CMake config files
+[3.202s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_description', 'cmake_prefix_path')
+[3.232s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/hook/cmake_prefix_path.ps1'
+[3.233s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/hook/cmake_prefix_path.dsv'
+[3.233s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/hook/cmake_prefix_path.sh'
+[3.234s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/bin'
+[3.234s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/lib/pkgconfig/parc_robot_description.pc'
+[3.234s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/lib/python3.10/site-packages'
+[3.235s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/bin'
+[3.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.ps1'
+[3.268s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.dsv'
+[3.268s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.sh'
+[3.269s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.bash'
+[3.270s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.zsh'
+[3.270s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noobinventor/parc_ws/src/install/parc_robot_description/share/colcon-core/packages/parc_robot_description)
+[3.307s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(parc_robot_description)
+[3.322s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description' for CMake module files
+[3.322s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description' for CMake config files
+[3.322s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_description', 'cmake_prefix_path')
+[3.336s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/hook/cmake_prefix_path.ps1'
+[3.336s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/hook/cmake_prefix_path.dsv'
+[3.337s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/hook/cmake_prefix_path.sh'
+[3.337s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/bin'
+[3.337s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/lib/pkgconfig/parc_robot_description.pc'
+[3.337s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/lib/python3.10/site-packages'
+[3.337s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_description/bin'
+[3.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.ps1'
+[3.352s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.dsv'
+[3.353s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.sh'
+[3.353s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.bash'
+[3.353s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_description/share/parc_robot_description/package.zsh'
+[3.353s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noobinventor/parc_ws/src/install/parc_robot_description/share/colcon-core/packages/parc_robot_description)
+[3.561s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_bringup': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_bringup/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_bringup/build --no-deps install_data
+[3.578s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot/build --no-deps install_data
+[3.581s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_gazebo': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_gazebo/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_gazebo/build --no-deps install_data
+[3.634s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot_control': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_control/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_control/build --no-deps install_data
+[4.064s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_bringup', 'pythonpath_develop')
+[4.065s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_bringup' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_bringup/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_bringup/build --no-deps install_data
+[4.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot_bringup/share/parc_robot_bringup/hook/pythonpath_develop.ps1'
+[4.099s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/build/parc_robot_bringup/share/parc_robot_bringup/hook/pythonpath_develop.dsv'
+[4.100s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot_bringup/share/parc_robot_bringup/hook/pythonpath_develop.sh'
+[4.128s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup' for CMake module files
+[4.128s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup' for CMake config files
+[4.128s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib'
+[4.129s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/bin'
+[4.129s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/pkgconfig/parc_robot_bringup.pc'
+[4.129s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/lib/python3.10/site-packages'
+[4.129s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_bringup', 'pythonpath')
+[4.143s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/hook/pythonpath.ps1'
+[4.143s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/hook/pythonpath.dsv'
+[4.143s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/hook/pythonpath.sh'
+[4.144s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/bin'
+[4.144s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(parc_robot_bringup)
+[4.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/package.ps1'
+[4.157s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/package.dsv'
+[4.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/package.sh'
+[4.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/package.bash'
+[4.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/parc_robot_bringup/package.zsh'
+[4.158s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noobinventor/parc_ws/src/install/parc_robot_bringup/share/colcon-core/packages/parc_robot_bringup)
+[4.159s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_control', 'pythonpath_develop')
+[4.160s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_control' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_control/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_control/build --no-deps install_data
+[4.181s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot_control/share/parc_robot_control/hook/pythonpath_develop.ps1'
+[4.181s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/build/parc_robot_control/share/parc_robot_control/hook/pythonpath_develop.dsv'
+[4.181s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot_control/share/parc_robot_control/hook/pythonpath_develop.sh'
+[4.193s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control' for CMake module files
+[4.193s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control' for CMake config files
+[4.194s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control/lib'
+[4.194s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control/bin'
+[4.194s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control/lib/pkgconfig/parc_robot_control.pc'
+[4.194s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control/lib/python3.10/site-packages'
+[4.194s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_control', 'pythonpath')
+[4.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/hook/pythonpath.ps1'
+[4.205s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/hook/pythonpath.dsv'
+[4.205s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/hook/pythonpath.sh'
+[4.206s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_control/bin'
+[4.206s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(parc_robot_control)
+[4.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/package.ps1'
+[4.218s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/package.dsv'
+[4.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/package.sh'
+[4.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/package.bash'
+[4.219s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_control/share/parc_robot_control/package.zsh'
+[4.219s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noobinventor/parc_ws/src/install/parc_robot_control/share/colcon-core/packages/parc_robot_control)
+[4.219s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot', 'pythonpath_develop')
+[4.220s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot/build --no-deps install_data
+[4.234s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot/share/parc_robot/hook/pythonpath_develop.ps1'
+[4.234s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/build/parc_robot/share/parc_robot/hook/pythonpath_develop.dsv'
+[4.234s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot/share/parc_robot/hook/pythonpath_develop.sh'
+[4.246s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot' for CMake module files
+[4.246s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot' for CMake config files
+[4.247s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot/lib'
+[4.247s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot/bin'
+[4.247s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot/lib/pkgconfig/parc_robot.pc'
+[4.247s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot/lib/python3.10/site-packages'
+[4.247s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot', 'pythonpath')
+[4.260s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/hook/pythonpath.ps1'
+[4.260s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/hook/pythonpath.dsv'
+[4.260s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/hook/pythonpath.sh'
+[4.261s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot/bin'
+[4.261s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(parc_robot)
+[4.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/package.ps1'
+[4.274s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/package.dsv'
+[4.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/package.sh'
+[4.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/package.bash'
+[4.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot/package.zsh'
+[4.274s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noobinventor/parc_ws/src/install/parc_robot/share/colcon-core/packages/parc_robot)
+[4.275s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_gazebo', 'pythonpath_develop')
+[4.276s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot_gazebo' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot_gazebo/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot_gazebo/build --no-deps install_data
+[4.289s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot_gazebo/share/parc_robot_gazebo/hook/pythonpath_develop.ps1'
+[4.289s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/build/parc_robot_gazebo/share/parc_robot_gazebo/hook/pythonpath_develop.dsv'
+[4.290s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/build/parc_robot_gazebo/share/parc_robot_gazebo/hook/pythonpath_develop.sh'
+[4.301s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo' for CMake module files
+[4.301s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo' for CMake config files
+[4.301s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/lib'
+[4.301s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/bin'
+[4.301s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/lib/pkgconfig/parc_robot_gazebo.pc'
+[4.302s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/lib/python3.10/site-packages'
+[4.302s] Level 1:colcon.colcon_core.shell:create_environment_hook('parc_robot_gazebo', 'pythonpath')
+[4.313s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/hook/pythonpath.ps1'
+[4.313s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/hook/pythonpath.dsv'
+[4.314s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/hook/pythonpath.sh'
+[4.314s] Level 1:colcon.colcon_core.environment:checking '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/bin'
+[4.314s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(parc_robot_gazebo)
+[4.326s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/package.ps1'
+[4.327s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/package.dsv'
+[4.327s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/package.sh'
+[4.327s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/package.bash'
+[4.327s] INFO:colcon.colcon_core.shell:Creating package script '/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/parc_robot_gazebo/package.zsh'
+[4.327s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/noobinventor/parc_ws/src/install/parc_robot_gazebo/share/colcon-core/packages/parc_robot_gazebo)
+[4.328s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.328s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.328s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.328s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.347s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.347s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.347s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.350s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.362s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noobinventor/parc_ws/src/install/local_setup.ps1'
+[4.362s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/noobinventor/parc_ws/src/install/_local_setup_util_ps1.py'
+[4.363s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noobinventor/parc_ws/src/install/setup.ps1'
+[4.378s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noobinventor/parc_ws/src/install/local_setup.sh'
+[4.378s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/noobinventor/parc_ws/src/install/_local_setup_util_sh.py'
+[4.378s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noobinventor/parc_ws/src/install/setup.sh'
+[4.392s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noobinventor/parc_ws/src/install/local_setup.bash'
+[4.392s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noobinventor/parc_ws/src/install/setup.bash'
+[4.404s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/noobinventor/parc_ws/src/install/local_setup.zsh'
+[4.404s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/noobinventor/parc_ws/src/install/setup.zsh'

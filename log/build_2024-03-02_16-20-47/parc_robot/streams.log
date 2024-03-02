@@ -1,0 +1,23 @@
+[2.453s] Invoking command in '/home/noobinventor/parc_ws/src/build/parc_robot': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot/build --no-deps install_data
+[2.732s] running develop
+[2.922s] running egg_info
+[2.923s] creating parc_robot.egg-info
+[2.924s] writing parc_robot.egg-info/PKG-INFO
+[2.924s] writing dependency_links to parc_robot.egg-info/dependency_links.txt
+[2.924s] writing entry points to parc_robot.egg-info/entry_points.txt
+[2.925s] writing requirements to parc_robot.egg-info/requires.txt
+[2.925s] writing top-level names to parc_robot.egg-info/top_level.txt
+[2.925s] writing manifest file 'parc_robot.egg-info/SOURCES.txt'
+[2.925s] reading manifest file 'parc_robot.egg-info/SOURCES.txt'
+[2.925s] writing manifest file 'parc_robot.egg-info/SOURCES.txt'
+[2.951s] running build_ext
+[2.951s] Creating /home/noobinventor/parc_ws/src/install/parc_robot/lib/python3.10/site-packages/parc-robot.egg-link (link to .)
+[2.952s] 
+[2.952s] Installed /home/noobinventor/parc_ws/src/build/parc_robot
+[2.952s] running install_data
+[2.953s] creating /home/noobinventor/parc_ws/src/install/parc_robot/share/ament_index
+[2.953s] creating /home/noobinventor/parc_ws/src/install/parc_robot/share/ament_index/resource_index
+[2.953s] creating /home/noobinventor/parc_ws/src/install/parc_robot/share/ament_index/resource_index/packages
+[2.953s] copying resource/parc_robot -> /home/noobinventor/parc_ws/src/install/parc_robot/share/ament_index/resource_index/packages
+[2.953s] copying package.xml -> /home/noobinventor/parc_ws/src/install/parc_robot/share/parc_robot
+[3.040s] Invoked command in '/home/noobinventor/parc_ws/src/build/parc_robot' returned '0': PYTHONPATH=/home/noobinventor/parc_ws/src/build/parc_robot/prefix_override:/home/noobinventor/parc_ws/src/install/parc_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/noobinventor/parc_ws/src/build/parc_robot/build --no-deps install_data
