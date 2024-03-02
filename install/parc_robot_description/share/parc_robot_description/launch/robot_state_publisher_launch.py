@@ -1,1 +1,0 @@
-/home/noobinventor/parc_ws/src/parc_robot_description/launch/robot_state_publisher_launch.py
