@@ -67,7 +67,7 @@
             <center>0.5 0.5</center>
           </distortion>
         </camera>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <plugin name="left_camera_controller" filename="libgazebo_ros_camera.so">
           <!-- <robotNamespace>${robot_ns}</robotNamespace> -->
           <cameraName>left_camera</cameraName>
           <imageTopicName>image_raw</imageTopicName>
@@ -146,7 +146,7 @@
             <center>0.5 0.5</center>
           </distortion>
         </camera>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <plugin name="right_camera_controller" filename="libgazebo_ros_camera.so">
           <!-- <robotNamespace>${robot_ns}</robotNamespace> -->
           <cameraName>right_camera</cameraName>
           <imageTopicName>image_raw</imageTopicName>
