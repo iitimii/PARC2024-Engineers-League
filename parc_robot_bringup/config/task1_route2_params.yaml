@@ -1,0 +1,17 @@
+/**:
+  ros__parameters:
+
+    origin_latitude: 49.90000010022057
+    origin_longitude: 8.900000304717647
+
+    x: -4.855142
+    y: -5.704758
+    z: 0.538968
+    yaw: 0.0
+
+    goal_x: 6.479509
+    goal_y: -2.120167
+    goal_z: 0.02
+
+    goal_latitude: 49.90005835290429 
+    goal_longitude: 8.900029311807417

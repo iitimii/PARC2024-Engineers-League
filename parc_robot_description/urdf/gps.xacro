@@ -15,32 +15,36 @@
       <parent link="${parent}" />
       <child link="${name}_link" />
     </joint>
-    
-    <gazebo>
-      <plugin name="gazebo_ros_gps" filename="libhector_gazebo_ros_gps.so">
-        <updateRate>4.0</updateRate>
-        <bodyName>${name}_link</bodyName>
-        <frameId>${name}_link</frameId>
-        <topicName>/gps/fix</topicName>
-        <velocityTopicName>/gps/fix_velocity</velocityTopicName>
-        <referenceLatitude>49.9</referenceLatitude>
-        <referenceLongitude>8.9</referenceLongitude>
-        <referenceHeading>0</referenceHeading>
-        <referenceAltitude>0</referenceAltitude>
-        <offset>0 0 0</offset>
-        <drift>0.001 0.001 0.001</drift>
-        <gaussianNoise>0 0 0</gaussianNoise>
-        <velocityDrift>0.001 0.001 0.001</velocityDrift>
-        <velocityGaussianNoise>0 0 0</velocityGaussianNoise>
-        <!-- <drift>0.001 0.001 0.001</drift>
-        <gaussianNoise>0.05 0.05 0.05</gaussianNoise>
-        <velocityDrift>0.001 0.001 0.001</velocityDrift>
-        <velocityGaussianNoise>0.5 0.5 0.5</velocityGaussianNoise> -->
-        <!-- <drift>0.001 0.001 0.001</drift>-->
-        <!-- <gaussianNoise>0.01 0.01 0.01</gaussianNoise>-->
-        <!-- <velocityDrift>0 0 0</velocityDrift>-->
-        <!-- <velocityGaussianNoise>0.05 0.05 0.05</velocityGaussianNoise>-->
-      </plugin>
+
+    <gazebo reference="gps_link">
+      <sensor name="gps_sensor" type="gps">
+        <always_on>true</always_on>
+        <update_rate>4.0</update_rate>
+        <pose>0 0 0 0 0 0</pose>
+        <gps>
+          <position_sensing>
+            <horizontal>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+              </noise>
+            </horizontal>
+            <vertical>
+              <noise type="gaussian">
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+              </noise>
+            </vertical>
+          </position_sensing>
+        </gps>
+        <plugin name="gps_controller" filename="libgazebo_ros_gps_sensor.so">
+          <ros>
+            <remapping>~/out:=/gps/fix</remapping>
+          </ros>
+          <frame_name>${name}_link</frame_name>
+        </plugin>
+      </sensor>
+        
     </gazebo>
   </xacro:macro>
 </robot>
