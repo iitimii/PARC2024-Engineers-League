@@ -9,7 +9,7 @@ find_package(urdf REQUIRED)
 find_package(pluginlib REQUIRED)
 
 install(
-  DIRECTORY config launch worlds 
+  DIRECTORY config launch models worlds 
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -18,7 +18,8 @@ ament_python_install_package(${PROJECT_NAME})
 
 # Install Python executables
 install(PROGRAMS
-  scripts/task1_params.py
+  scripts/load_task1_params.py
+  scripts/task1_test.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

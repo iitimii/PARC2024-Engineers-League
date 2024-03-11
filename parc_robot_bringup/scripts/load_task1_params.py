@@ -25,18 +25,6 @@ class LoadTask1Params(Node):
                 ('goal_longitude', 0.0),
                 ('origin_latitude', 0.0),
                 ('origin_longitude', 0.0),
-                #
-                # ('x', rclpy.Parameter.Type.DOUBLE),
-                # ('y', rclpy.Parameter.Type.DOUBLE),
-                # ('z', rclpy.Parameter.Type.DOUBLE),
-                # ('yaw', rclpy.Parameter.Type.DOUBLE),
-                # ('goal_x', rclpy.Parameter.Type.DOUBLE),
-                # ('y', rclpy.Parameter.Type.DOUBLE),
-                # ('goal_z', rclpy.Parameter.Type.DOUBLE),
-                # ('goal_latitude', rclpy.Parameter.Type.DOUBLE),
-                # ('goal_longitude', rclpy.Parameter.Type.DOUBLE),
-                # ('origin_latitude', rclpy.Parameter.Type.DOUBLE),
-                # ('origin_latitude, rclpy.Parameter.Type.DOUBLE),
             ])
 
 def main(args=None):
