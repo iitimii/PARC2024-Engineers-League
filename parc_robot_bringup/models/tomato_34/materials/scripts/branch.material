@@ -1,0 +1,14 @@
+material branch/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture ../textures/AG15brn1.png
+      }
+    }
+  }
+}

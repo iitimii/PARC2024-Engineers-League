@@ -1,0 +1,14 @@
+material blossom1/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture ../textures/AG15blo1.png
+      }
+    }
+  }
+}

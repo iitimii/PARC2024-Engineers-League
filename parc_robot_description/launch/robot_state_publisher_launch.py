@@ -12,7 +12,6 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     # Launch config variables
     use_sim_time = LaunchConfiguration("use_sim_time")
-    use_ros2_control = LaunchConfiguration("use_ros2_control")
 
     # Process files
     pkg_path = FindPackageShare(package="parc_robot_description").find(
@@ -23,8 +22,6 @@ def generate_launch_description():
         [
             "xacro ",
             urdf_model_path,
-            " use_ros2_control:=",
-            use_ros2_control,
             " sim_mode:=",
             use_sim_time,
         ]
@@ -33,14 +30,8 @@ def generate_launch_description():
     # Declare the launch arguments
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         name="use_sim_time",
-        default_value="False",
+        default_value="true",
         description="Use simulation (Gazebo) time if true",
-    )
-
-    declare_use_ros2_control_cmd = DeclareLaunchArgument(
-        name="use_ros2_control",
-        default_value="False",
-        description="Use ros2_control if true",
     )
 
     # Start robot state publisher node
@@ -59,7 +50,6 @@ def generate_launch_description():
 
     # Declare the launch options
     ld.add_action(declare_use_sim_time_cmd)
-    ld.add_action(declare_use_ros2_control_cmd)
 
     # Add any actions
     ld.add_action(start_robot_state_publisher_cmd)

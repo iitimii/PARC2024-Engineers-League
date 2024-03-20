@@ -7,25 +7,27 @@ from rclpy.node import Node
 class LoadTask1Params(Node):
 
     def __init__(self):
-        super().__init__('load_task1_params')
-                         #,
-                         # allow_undeclared_parameters=True,
-                         # automatically_declare_parameters_from_overrides=True)
+        super().__init__("load_task1_params")
+        # ,
+        # allow_undeclared_parameters=True,
+        # automatically_declare_parameters_from_overrides=True)
         self.declare_parameters(
-            namespace='',
+            namespace="",
             parameters=[
-                ('x', 0.0),
-                ('y', 0.0),
-                ('z', 0.0),
-                ('yaw', 0.0),
-                ('goal_x', 0.0),
-                ('y', 0.0),
-                ('goal_z', 0.0),
-                ('goal_latitude', 0.0),
-                ('goal_longitude', 0.0),
-                ('origin_latitude', 0.0),
-                ('origin_longitude', 0.0),
-            ])
+                ("x", 0.0),
+                ("y", 0.0),
+                ("z", 0.0),
+                ("yaw", 0.0),
+                ("goal_x", 0.0),
+                ("y", 0.0),
+                ("goal_z", 0.0),
+                ("goal_latitude", 0.0),
+                ("goal_longitude", 0.0),
+                ("origin_latitude", 0.0),
+                ("origin_longitude", 0.0),
+            ],
+        )
+
 
 def main(args=None):
     rclpy.init(args=args)

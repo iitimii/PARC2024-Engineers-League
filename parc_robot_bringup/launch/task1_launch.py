@@ -6,19 +6,9 @@ from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
     IncludeLaunchDescription,
-    ExecuteProcess,
-    TimerAction,
     OpaqueFunction,
-    RegisterEventHandler,
-    LogInfo,
 )
-from launch.event_handlers import (
-    OnExecutionComplete,
-    OnProcessExit,
-    OnProcessIO,
-    OnProcessStart,
-    OnShutdown,
-)
+
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
@@ -35,9 +25,11 @@ def generate_launch_description():
     )
     pkg_gazebo_ros = FindPackageShare(package="gazebo_ros").find("gazebo_ros")
 
-    gazebo_params_file = os.path.join(pkg_path, "config/gazebo_params.yaml")
+    rviz_config_file = os.path.join(pkg_path, "rviz/parc_robot_bringup.rviz")
     goal_location_sdf = os.path.join(pkg_path, "models/goal_location/model.sdf")
-    world_filename = "parc_task1.world"
+    world_filename = "tomato_field.world"
+    # world_filename = "parc_task11.world"
+    # world_filename = "parc_task1.world"
     world_path = os.path.join(pkg_path, "worlds", world_filename)
 
     # Launch configuration variables
@@ -45,18 +37,10 @@ def generate_launch_description():
     world = LaunchConfiguration("world")
     route = LaunchConfiguration("route")
 
-    # Declare route launch argument
-    declare_route_cmd = DeclareLaunchArgument(
-        name="route",
-        default_value="route1",
-        description="Inside launch description",
-        choices=["route1", "route2", "route3"],
-    )
-
     # Declare launch arguments
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         name="use_sim_time",
-        default_value="True",
+        default_value="true",
         description="Use simulation (Gazebo) clock if true",
     )
 
@@ -64,6 +48,13 @@ def generate_launch_description():
         name="world",
         default_value=world_path,
         description="Full path to the world model to load",
+    )
+
+    declare_route_cmd = DeclareLaunchArgument(
+        name="route",
+        default_value="route1",
+        description="Route for robot navigation",
+        choices=["route1", "route2", "route3"],
     )
 
     # Start robot state publisher
@@ -81,7 +72,6 @@ def generate_launch_description():
         ),
         launch_arguments={
             "world": world,
-            "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
         }.items(),
     )
 
@@ -177,31 +167,21 @@ def generate_launch_description():
 
         return actions
 
-    # Spawn robot_base_controller
-    start_robot_base_controller_cmd = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["robot_base_controller"],
+    # Publish the joint state values for the non-fixed joints in the URDF file.
+    start_joint_state_publisher_cmd = Node(
+        package="joint_state_publisher",
+        executable="joint_state_publisher",
+        name="joint_state_publisher",
     )
 
-    # Delayed start_robot_base_controller_cmd action
-    start_delayed_robot_base_controller_cmd = TimerAction(
-        period=5.0, actions=[start_robot_base_controller_cmd]
+    # Launch RViz
+    start_rviz_cmd = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        output="screen",
+        arguments=["-d", rviz_config_file],
     )
-
-    # Spawn joint_state_broadcaser
-    start_joint_broadcaster_cmd = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_broadcaster"],
-    )
-
-    # Delayed joint_broadcaster_cmd action
-    start_delayed_joint_broadcaster_cmd = TimerAction(
-        period=5.0, actions=[start_joint_broadcaster_cmd]
-    )
-
-    # TODO: rviz
 
     # Create the launch description and populate
     ld = LaunchDescription()
@@ -213,9 +193,9 @@ def generate_launch_description():
 
     # Add any actions
     ld.add_action(start_gazebo_cmd)
+    ld.add_action(start_rviz_cmd)
+    ld.add_action(start_joint_state_publisher_cmd)
     ld.add_action(OpaqueFunction(function=spawn_gazebo_entities))
     ld.add_action(start_robot_state_publisher_cmd)
-    ld.add_action(start_delayed_robot_base_controller_cmd)
-    ld.add_action(start_delayed_joint_broadcaster_cmd)
 
     return ld

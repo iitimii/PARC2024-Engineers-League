@@ -3,17 +3,38 @@ Pan-African Robotics Competition Engineers League category project development f
 
 ## Package Overview
 - [`parc_robot_bringup`](./parc_robot_bringup/) : Contains config, world, scripts and launch files to bringup PARC robot for both task 1 and task 2. 
-- [`parc_robot_description`](./parc_robot_description/) : Contains the URDF description files for PARC robot, sensors and `ros2 control`.
-- [`parc_robot_msgs`](./parc_robot_navigation/) : Contains custom messages
+- [`parc_robot_description`](./parc_robot_description/) : Contains the URDF description files for PARC robot, sensors, launch files for robot state publisher and
+                                                        displaying PARC robot in rViz.
 
 ***Work in Progress***
 
-## ROS2 Installation
+## Development machine setup
+
+With ROS2 Humble installed, create a workspace on the dev machine and clone this repository:
+
+```
+mkdir -p ~/dev_ws/src
+cd ~/dev_ws/src
+git clone https://github.com/PARC-Robotics/PARC2024-Engineers-League.git .
+```
+
+Install ROS dependencies for the PARC robot packages:
+```
+cd ~/dev_ws
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro humble -r -y
+```
 
 ## Gazebo
 
 ### Gazebo model setup
+Navigate to models folder in the `parc_robot_bringup` package, then copy its directory contents to the Gazebo model directory on the PC.
 
+```
+cd ~/dev_ws/src/parc_robot_bringup/models
+cp -R . ~/.gazebo/models
+```
 
 ### Geographiclib Installation
 

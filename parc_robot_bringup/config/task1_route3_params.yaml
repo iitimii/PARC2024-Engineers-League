@@ -11,7 +11,7 @@
 
     goal_x: -4.943510
     goal_y: -2.638408
-    goal_z: 0.02
+    goal_z: 0.07 #0.02
 
     goal_latitude: 49.89995559769814
     goal_longitude: 8.90003685357497

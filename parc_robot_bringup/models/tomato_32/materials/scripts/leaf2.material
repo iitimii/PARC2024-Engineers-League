@@ -1,0 +1,14 @@
+material leaf2/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture ../textures/AG15lef2.png
+      }
+    }
+  }
+}

@@ -16,13 +16,11 @@
           izz="0.0003973"/>
       </inertial>
       <visual>
-        <origin xyz="0.0 0.015 0.0" rpy="0 -${pi/2} 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 0.015 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>
@@ -34,6 +32,7 @@
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
       <child link="left_camera" />
+      <origin xyz="0 0 0" rpy="0 ${pi/2} 0"/>
     </joint>
 
     <!-- Left Camera Gazebo -->
@@ -95,13 +94,11 @@
           izz="0.0003973"/>
       </inertial>
       <visual>
-        <origin xyz="0.0 0.015 0.0" rpy="0 ${pi/2} 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 0.015 0.0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://parc_robot_description/meshes/ZED2.dae"/>
         </geometry>

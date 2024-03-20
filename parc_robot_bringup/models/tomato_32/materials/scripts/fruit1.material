@@ -1,0 +1,14 @@
+material fruit1/Diffuse
+{
+  receive_shadows off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture ../textures/AG15frt1.png
+      }
+    }
+  }
+}

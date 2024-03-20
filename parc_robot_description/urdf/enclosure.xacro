@@ -11,9 +11,9 @@
       <visual name="visual">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <!-- <mesh filename="package://parc_robot/meshes/enclosure.dae" scale="0.001 0.001 0.001" /> -->
+          <mesh filename="package://parc_robot_description/meshes/enclosure.dae" scale="0.001 0.001 0.001" />
           <!-- <mesh filename="package://parc_robot/meshes/enclosure_with_overhang.stl" scale="0.001 0.001 0.001" /> -->
-          <mesh filename="package://parc_robot_description/meshes/enclosure_with_overhang.dae" scale="0.001 0.001 0.001" />
+          <!-- <mesh filename="package://parc_robot_description/meshes/enclosure_with_overhang.dae" scale="0.001 0.001 0.001" /> -->
         </geometry>
 
         <!-- <material name="dirty_metal">
@@ -32,9 +32,9 @@
       <collision name="collision">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <!-- <mesh filename="package://parc_robot/meshes/enclosure.dae" scale="0.001 0.001 0.001" /> -->
+          <mesh filename="package://parc_robot_description/meshes/enclosure.dae" scale="0.001 0.001 0.001" />
           <!-- <mesh filename="package://parc_robot/meshes/enclosure_with_overhang.stl" scale="0.001 0.001 0.001" /> -->
-          <mesh filename="package://parc_robot_description/meshes/enclosure_with_overhang.dae" scale="0.001 0.001 0.001" />
+          <!-- <mesh filename="package://parc_robot_description/meshes/enclosure_with_overhang.dae" scale="0.001 0.001 0.001" /> -->
         </geometry>
       </collision>
     </link>
