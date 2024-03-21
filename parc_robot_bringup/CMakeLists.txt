@@ -20,6 +20,7 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/load_task1_params.py
   scripts/task1_test.py
+  scripts/task2_test.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
