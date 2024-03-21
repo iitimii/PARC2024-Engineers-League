@@ -2,8 +2,6 @@
 
 <robot name="parc_robot_v2" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:arg name="robot_namespace" default="/" />
-
   <xacro:include filename="$(find parc_robot_description)/urdf/scout_wheel_type1.xacro" />
   <xacro:include filename="$(find parc_robot_description)/urdf/scout_wheel_type2.xacro" />
 
@@ -47,9 +45,9 @@
   <link name="base_footprint"/>
 
   <joint name="base_footprint_joint" type="fixed">
-      <origin xyz="0 0 ${wheel_vertical_offset - wheel_radius}" rpy="0 0 0" />
-      <parent link="base_link" />
-      <child link="base_footprint" />
+      <origin xyz="0 0 ${wheel_radius - wheel_vertical_offset}" rpy="0 0 0" />
+      <parent link="base_footprint" />
+      <child link="base_link" />
   </joint>
 
   <link name="inertial_link">
@@ -81,26 +79,6 @@
   <xacro:scout_wheel_type2 wheel_prefix="rear_right">
       <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="3.142 0 0" />
   </xacro:scout_wheel_type2>
-
-  <!-- <gazebo reference="front_right_wheel"> -->
-  <!--   <mu1 value="0.5"/> -->
-  <!--   <mu2 value="0.5"/> -->
-  <!-- </gazebo> -->
-  <!---->
-  <!-- <gazebo reference="rear_right_wheel"> -->
-  <!--   <mu1 value="0.5"/> -->
-  <!--   <mu2 value="0.5"/> -->
-  <!-- </gazebo> -->
-  <!---->
-  <!-- <gazebo reference="front_left_wheel"> -->
-  <!--   <mu1 value="0.5"/> -->
-  <!--   <mu2 value="0.5"/> -->
-  <!-- </gazebo> -->
-  <!---->
-  <!-- <gazebo reference="rear_left_wheel"> -->
-  <!--   <mu1 value="0.5"/> -->
-  <!--   <mu2 value="0.5"/> -->
-  <!-- </gazebo> -->
 
   <!-- Sensor definitions -->
   <xacro:include filename="$(find parc_robot_description)/urdf/sensors.xacro" />

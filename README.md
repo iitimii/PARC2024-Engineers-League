@@ -26,7 +26,7 @@ rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro humble -r -y
 ```
 
-## Gazebo
+## Gazebo Classic
 
 ### Gazebo model setup
 Navigate to models folder in the `parc_robot_bringup` package, then copy its directory contents to the Gazebo model directory on the PC.

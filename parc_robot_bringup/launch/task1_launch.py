@@ -7,6 +7,7 @@ from launch.actions import (
     DeclareLaunchArgument,
     IncludeLaunchDescription,
     OpaqueFunction,
+    TimerAction,
 )
 
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -25,11 +26,10 @@ def generate_launch_description():
     )
     pkg_gazebo_ros = FindPackageShare(package="gazebo_ros").find("gazebo_ros")
 
+    gazebo_params_file = os.path.join(pkg_path, "config/gazebo_params.yaml")
     rviz_config_file = os.path.join(pkg_path, "rviz/parc_robot_bringup.rviz")
     goal_location_sdf = os.path.join(pkg_path, "models/goal_location/model.sdf")
-    world_filename = "tomato_field.world"
-    # world_filename = "parc_task11.world"
-    # world_filename = "parc_task1.world"
+    world_filename = "parc_task1.world"
     world_path = os.path.join(pkg_path, "worlds", world_filename)
 
     # Launch configuration variables
@@ -72,6 +72,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             "world": world,
+            # "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
         }.items(),
     )
 
@@ -167,6 +168,30 @@ def generate_launch_description():
 
         return actions
 
+    # Spawn robot_base_controller
+    start_robot_base_controller_cmd = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["robot_base_controller"],
+    )
+
+    # Delayed start_robot_base_controller_cmd action
+    start_delayed_robot_base_controller_cmd = TimerAction(
+        period=5.0, actions=[start_robot_base_controller_cmd]
+    )
+
+    # Spawn joint_state_broadcaser
+    start_joint_broadcaster_cmd = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broadcaster"],
+    )
+
+    # Delayed joint_broadcaster_cmd action
+    start_delayed_joint_broadcaster_cmd = TimerAction(
+        period=5.0, actions=[start_joint_broadcaster_cmd]
+    )
+
     # Publish the joint state values for the non-fixed joints in the URDF file.
     start_joint_state_publisher_cmd = Node(
         package="joint_state_publisher",
@@ -197,5 +222,7 @@ def generate_launch_description():
     ld.add_action(start_joint_state_publisher_cmd)
     ld.add_action(OpaqueFunction(function=spawn_gazebo_entities))
     ld.add_action(start_robot_state_publisher_cmd)
+    # ld.add_action(start_delayed_robot_base_controller_cmd)
+    # ld.add_action(start_delayed_joint_broadcaster_cmd)
 
     return ld
