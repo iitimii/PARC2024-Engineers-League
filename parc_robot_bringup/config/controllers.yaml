@@ -15,13 +15,12 @@ robot_base_controller:
 
     odom_frame_id: odom
     base_frame_id: base_footprint
-    # base_frame_id: base_link
 
     left_wheel_names: ['front_left_wheel', 'rear_left_wheel']
     right_wheel_names: ['front_right_wheel', 'rear_right_wheel']
 
-    wheels_per_side: 2
-    wheel_separation: 0.498 #
+    wheels_per_side: 1
+    wheel_separation: 0.498
     wheel_radius: 0.165
 
     pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]

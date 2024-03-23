@@ -72,7 +72,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             "world": world,
-            # "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
+            "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
         }.items(),
     )
 
@@ -172,31 +172,28 @@ def generate_launch_description():
     start_robot_base_controller_cmd = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["robot_base_controller"],
+        arguments=[
+            "robot_base_controller",
+            "--controller-manager",
+            "/controller_manager",
+        ],
     )
 
     # Delayed start_robot_base_controller_cmd action
     start_delayed_robot_base_controller_cmd = TimerAction(
-        period=5.0, actions=[start_robot_base_controller_cmd]
+        period=4.0, actions=[start_robot_base_controller_cmd]
     )
 
     # Spawn joint_state_broadcaser
     start_joint_broadcaster_cmd = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_broadcaster"],
+        arguments=["joint_broadcaster", "--controller-manager", "/controller_manager"],
     )
 
     # Delayed joint_broadcaster_cmd action
     start_delayed_joint_broadcaster_cmd = TimerAction(
-        period=5.0, actions=[start_joint_broadcaster_cmd]
-    )
-
-    # Publish the joint state values for the non-fixed joints in the URDF file.
-    start_joint_state_publisher_cmd = Node(
-        package="joint_state_publisher",
-        executable="joint_state_publisher",
-        name="joint_state_publisher",
+        period=4.0, actions=[start_joint_broadcaster_cmd]
     )
 
     # Launch RViz
@@ -219,10 +216,9 @@ def generate_launch_description():
     # Add any actions
     ld.add_action(start_gazebo_cmd)
     ld.add_action(start_rviz_cmd)
-    ld.add_action(start_joint_state_publisher_cmd)
     ld.add_action(OpaqueFunction(function=spawn_gazebo_entities))
     ld.add_action(start_robot_state_publisher_cmd)
-    # ld.add_action(start_delayed_robot_base_controller_cmd)
-    # ld.add_action(start_delayed_joint_broadcaster_cmd)
+    ld.add_action(start_delayed_robot_base_controller_cmd)
+    ld.add_action(start_delayed_joint_broadcaster_cmd)
 
     return ld

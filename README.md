@@ -4,7 +4,7 @@ Pan-African Robotics Competition Engineers League category project development f
 ## Package Overview
 - [`parc_robot_bringup`](./parc_robot_bringup/) : Contains config, world, scripts and launch files to bringup PARC robot for both task 1 and task 2. 
 - [`parc_robot_description`](./parc_robot_description/) : Contains the URDF description files for PARC robot, sensors, launch files for robot state publisher and
-                                                        displaying PARC robot in rViz.
+- [`parc_robot_teleop`](./parc_robot_teleop/) : Contains launch file to use the `teleop_twist_keyboard` ROS package to control the PARC robot.
 
 ***Work in Progress***
 
