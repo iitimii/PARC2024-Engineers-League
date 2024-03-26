@@ -4,10 +4,10 @@ import rclpy
 from rclpy.node import Node
 
 
-class LoadTask1Params(Node):
+class LoadTask2Params(Node):
 
     def __init__(self):
-        super().__init__("load_task1_params")
+        super().__init__("load_task2_params")
         self.declare_parameters(
             namespace="",
             parameters=[
@@ -15,11 +15,6 @@ class LoadTask1Params(Node):
                 ("y", 0.0),
                 ("z", 0.0),
                 ("yaw", 0.0),
-                ("goal_x", 0.0),
-                ("goal_y", 0.0),
-                ("goal_z", 0.0),
-                ("goal_latitude", 0.0),
-                ("goal_longitude", 0.0),
                 ("origin_latitude", 0.0),
                 ("origin_longitude", 0.0),
             ],
@@ -29,9 +24,9 @@ class LoadTask1Params(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    load_task1_params = LoadTask1Params()
+    load_task2_params = LoadTask2Params()
 
-    rclpy.spin(load_task1_params)
+    rclpy.spin(load_task2_params)
     rclpy.shutdown()
 
 
