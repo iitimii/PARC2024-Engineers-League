@@ -50,14 +50,20 @@ def generate_launch_description():
     declare_world_cmd = DeclareLaunchArgument(
         name="world",
         default_value=world_path,
+        # default_value="./worlds/" + world_path,
         description="Full path to the world model to load",
-        choices=["world1", "world2", "world3"],
+        # choices=[
+        #     "./worlds/world1.world",
+        #     "./worlds/world2.world",
+        #     "./worlds/world3.world",
+        # ],
     )
 
     declare_route_cmd = DeclareLaunchArgument(
         name="route",
         default_value="route1",
         description="Route for robot navigation",
+        choices=["route1"],
     )
 
     declare_speed_cmd = DeclareLaunchArgument(
@@ -80,7 +86,9 @@ def generate_launch_description():
             [os.path.join(pkg_gazebo_ros, "launch", "gazebo.launch.py")]
         ),
         launch_arguments={
+            # world_path = os.path.join(pkg_path, "worlds", world_filename)
             "world": world,
+            # "world": os.path.join(pkg_path, world, ".world")
             "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
         }.items(),
     )

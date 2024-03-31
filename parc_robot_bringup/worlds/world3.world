@@ -1525,10 +1525,10 @@
       <pose>5.04483 4.76224 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>2230 947000000</sim_time>
-      <real_time>255 809006331</real_time>
-      <wall_time>1711923148 384185101</wall_time>
-      <iterations>50190</iterations>
+      <sim_time>2640 608000000</sim_time>
+      <real_time>1279 274921354</real_time>
+      <wall_time>1711922846 318072515</wall_time>
+      <iterations>254645</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -1540,20 +1540,20 @@
         </link>
       </model>
       <model name='mud_box'>
-        <pose>4.28571 0.632089 -0.071041 0 -0 0</pose>
+        <pose>4.3174 0.754632 -0.071041 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>4.28571 0.632089 -0.071041 0 -0 0</pose>
+          <pose>4.3174 0.754632 -0.071041 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='mud_box_0'>
-        <pose>-3.69829 0.636334 -0.067897 0 -0 0</pose>
+        <pose>-3.63891 0.757471 -0.067897 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-3.69829 0.636334 -0.067897 0 -0 0</pose>
+          <pose>-3.63891 0.757471 -0.067897 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1570,100 +1570,100 @@
         </link>
       </model>
       <model name='tomato_13'>
-        <pose>4.88122 1.24191 -0.085271 0 0 -2.03319</pose>
+        <pose>4.75085 0.190933 -0.085271 0 0 -1.03319</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>4.88122 1.24191 -0.085271 0 -0 -2.03319</pose>
+          <pose>4.75085 0.190933 -0.085271 0 0 -1.03319</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_13_0'>
-        <pose>-0.243175 -0.083736 0 0 -0 1.2</pose>
+        <pose>4.8171 1.40146 0 0 -0 1.85</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-0.243175 -0.083736 0 0 -0 1.2</pose>
+          <pose>4.8171 1.40146 0 0 -0 1.85</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_18_0'>
-        <pose>-0.216178 1.26461 0 0 -0 0</pose>
+        <pose>0.0568 -0.063364 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-0.216178 1.26461 0 0 -0 0</pose>
+          <pose>0.0568 -0.063364 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_23'>
-        <pose>1.61225 -0.068046 0 0 -0 0</pose>
+        <pose>1.66732 1.22258 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.61225 -0.068046 0 0 -0 0</pose>
+          <pose>1.66732 1.22258 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_32'>
-        <pose>-1.74549 1.17092 0 0 -0 1.68318</pose>
+        <pose>1.71359 0.069211 0 0 -0 0.633179</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-1.74549 1.17092 0 0 -0 1.68318</pose>
+          <pose>1.71359 0.069211 0 0 -0 0.633179</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_32_0'>
-        <pose>4.91145 0.002434 0 0 0 -0.95</pose>
+        <pose>-1.74681 -0.053276 0 0 0 -1.7</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>4.91145 0.002434 0 0 0 -0.95</pose>
+          <pose>-1.74681 -0.053276 0 0 0 -1.7</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_34'>
-        <pose>3.28282 1.30291 0 0 -0 0.733185</pose>
+        <pose>-1.71997 1.10304 0 0 -0 0.733185</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>3.28282 1.30291 0 0 -0 0.733185</pose>
+          <pose>-1.71997 1.10304 0 0 -0 0.733185</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_34_0'>
-        <pose>3.30034 0.03227 0 0 0 -3</pose>
+        <pose>0.051555 1.18827 0 0 0 -3</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>3.30034 0.03227 0 0 -0 -3</pose>
+          <pose>0.051555 1.18827 0 0 0 -3</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_34_1'>
-        <pose>1.58389 1.34132 0 0 0 -2.95</pose>
+        <pose>3.1338 1.28334 0 0 0 -2.95</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.58389 1.34132 0 0 0 -2.95</pose>
+          <pose>3.1338 1.28334 0 0 0 -2.95</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='tomato_9_0'>
-        <pose>-1.88867 -0.151479 0 0 -0 0</pose>
+        <pose>3.18856 0.104234 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-1.88867 -0.151479 0 0 -0 0</pose>
+          <pose>3.18856 0.104234 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>

@@ -20,8 +20,8 @@ robot_base_controller:
     right_wheel_names: ['front_right_wheel', 'rear_right_wheel']
 
     wheels_per_side: 2 # 1
-    # wheel_separation: 0.498
-    wheel_separation: 4.0
+    wheel_separation: 0.498
+    # wheel_separation: 2.0
     wheel_radius: 0.165
 
     pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
