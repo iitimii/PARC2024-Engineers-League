@@ -1,12 +1,17 @@
+#!/usr/bin/python3
+
 import sys
+import time
 
 import rclpy
 from rclpy.node import Node
-from gazebo_msgs.msg import ModelStates
+
+from gazebo_msgs.msg import EntityState
+from gazebo_msgs.srv import SetEntityState
 from geometry_msgs.msg import Pose, Twist, Vector3, Point, Quaternion
 from std_msgs.msg import String
 
-from parc_robot_routes import ROUTE_1, ROUTE_2
+from parc_robot_routes import ROUTE
 
 
 class RobotController(Node):
@@ -14,22 +19,18 @@ class RobotController(Node):
     Interpolates path at 30 Hz to move the robot
     """
 
-    def __init__(self, speed=0.1, route=ROUTE_1):
+    def __init__(self, speed=0.1, route=ROUTE):
         super().__init__("robot_controller")
 
-        self.state_pub = self.create_publisher(
-            ModelStates, "/gazebo/set_entity_state", 30
-        )
+        self.set_state = self.create_client(SetEntityState, "/gazebo/set_entity_state")
         self.robot_status_pub = self.create_publisher(
             String, "/parc_robot/robot_status", 10
         )
+        self.path = route
         self.speed = speed
         self.frequency = 30
         self.states = self.get_states()
         self.current_state = 0
-        self.path = route
-        self.interpolation_rate = self.create_rate(self.frequency)
-        self.sleep_rate = self.create_rate(1)
 
     def get_distance(self, state1, state2):
         # Calculate the distance between two states - we are only interested in the x and y coordinates
@@ -135,28 +136,23 @@ class RobotController(Node):
         return new_angular
 
     def run(self):
-        # while self.state_pub.get_num_connections() == 0:
-        while self.state_pub.get_subscription_count() == 0:
-            self.get_logger().info(
-                f"Waiting for subscriber to {self.state_pub}"
-                # f"Waiting for subscriber to {self.state_pub.resolved_name}"
-            )
-            self.sleep_rate.sleep()
+        while not self.set_state.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info("service not available, waiting again...")
 
-        self.get_logger().info(f"Publishing to {self.state_pub}")
-        # rospy.loginfo(f"Publishing to {self.state_pub.resolved_name}")
-        self.robot_status_pub.publish("started")
+        robot_state = String()
+        robot_state.data = "started"
+        self.robot_status_pub.publish(robot_state)
+
         while rclpy.ok():
             if self.current_state >= len(self.states):
-                self.robot_status_pub.publish("finished")
+                robot_state.data = "finished"
+                self.robot_status_pub.publish(robot_state)
                 self.get_logger().info("At the end of path")
-                self.destroy_node()
-                # rospy.signal_shutdown("At the end of path")
-                continue
+                break
 
             current_state = self.states[self.current_state]
-            msg = ModelStates(
-                # model_name="parc_robot",
+
+            current_robot_state = EntityState(
                 name="parc_robot",
                 pose=Pose(
                     position=Point(
@@ -173,42 +169,41 @@ class RobotController(Node):
                 ),
                 twist=Twist(
                     linear=Vector3(
-                        x=current_state["twist"]["linear"]["x"],
-                        y=current_state["twist"]["linear"]["y"],
-                        z=current_state["twist"]["linear"]["z"],
+                        x=float(current_state["twist"]["linear"]["x"]),
+                        y=float(current_state["twist"]["linear"]["y"]),
+                        z=float(current_state["twist"]["linear"]["z"]),
                     ),
                     angular=Vector3(
-                        x=current_state["twist"]["angular"]["x"],
-                        y=current_state["twist"]["angular"]["y"],
-                        z=current_state["twist"]["angular"]["z"],
+                        x=float(current_state["twist"]["angular"]["x"]),
+                        y=float(current_state["twist"]["angular"]["y"]),
+                        z=float(current_state["twist"]["angular"]["z"]),
                     ),
                 ),
+                reference_frame="world",
             )
-            self.state_pub.publish(msg)
+
+            # Request setting the current robot state using the SetEntityState service
+            robot_entity_request = SetEntityState.Request()
+            robot_entity_request._state = current_robot_state
+            self.set_state.call_async(robot_entity_request)
+
             self.current_state += 1
-            self.interpolation_rate.sleep()
+            rclpy.spin_once(self)
+            time.sleep(1 / self.frequency)
 
 
 if __name__ == "__main__":
     try:
         speed = float(sys.argv[1])
-        route_arg = sys.argv[2]
     except IndexError:
-        print(
-            "\033[91m" + "Usage: python robot_controller.py <speed> <route>" + "\033[0m"
-        )
+        print("\033[91m" + "Usage: python3 parc_robot_nav.py <speed>" + "\033[0m")
         sys.exit(1)
 
-    route = ROUTE_1
-
-    if route_arg == "route2":
-        route = ROUTE_2
-
-    # Sleep for 5 seconds to allow gazebo to start
-    # Maybe add a delay in the launch file to get everything running in the right order
-    # rospy.sleep(5)
+    route = ROUTE
 
     rclpy.init()
 
     robot_controller = RobotController(speed=speed, route=route)
     robot_controller.run()
+
+    rclpy.shutdown()

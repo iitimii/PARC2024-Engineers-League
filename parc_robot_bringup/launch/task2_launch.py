@@ -8,8 +8,10 @@ from launch.actions import (
     IncludeLaunchDescription,
     OpaqueFunction,
     TimerAction,
+    RegisterEventHandler,
 )
 
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 
@@ -27,14 +29,16 @@ def generate_launch_description():
     pkg_gazebo_ros = FindPackageShare(package="gazebo_ros").find("gazebo_ros")
 
     gazebo_params_file = os.path.join(pkg_path, "config/gazebo_params.yaml")
-    rviz_config_file = os.path.join(pkg_path, "rviz/parc_robot_bringup.rviz")
-    world_filename = "parc_task2.world"
+    rviz_config_file = os.path.join(pkg_path, "rviz/task2.rviz")
+    # world_filename = "parc_task2.world"
+    world_filename = "world1.world"
     world_path = os.path.join(pkg_path, "worlds", world_filename)
 
     # Launch configuration variables
     use_sim_time = LaunchConfiguration("use_sim_time")
     world = LaunchConfiguration("world")
     route = LaunchConfiguration("route")
+    speed = LaunchConfiguration("speed")
 
     # Declare launch arguments
     declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -47,13 +51,19 @@ def generate_launch_description():
         name="world",
         default_value=world_path,
         description="Full path to the world model to load",
+        choices=["world1", "world2", "world3"],
     )
 
     declare_route_cmd = DeclareLaunchArgument(
         name="route",
         default_value="route1",
         description="Route for robot navigation",
-        choices=["route1", "route2"],
+    )
+
+    declare_speed_cmd = DeclareLaunchArgument(
+        name="speed",
+        default_value="0.1",
+        description="PARC robot speed in m/s",
     )
 
     # Start robot state publisher
@@ -180,6 +190,14 @@ def generate_launch_description():
         arguments=["-d", rviz_config_file],
     )
 
+    # Launch PARC robot route navigation node
+    start_parc_nav_cmd = Node(
+        package="parc_robot_bringup",
+        executable="parc_robot_nav.py",
+        output="screen",
+        arguments=[speed],
+    )
+
     # Create the launch description and populate
     ld = LaunchDescription()
 
@@ -187,6 +205,7 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_world_cmd)
     ld.add_action(declare_route_cmd)
+    ld.add_action(declare_speed_cmd)
 
     # Add any actions
     ld.add_action(start_gazebo_cmd)
@@ -195,5 +214,13 @@ def generate_launch_description():
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(start_delayed_robot_base_controller_cmd)
     ld.add_action(start_delayed_joint_broadcaster_cmd)
+    ld.add_action(
+        RegisterEventHandler(
+            OnProcessExit(
+                target_action=start_joint_broadcaster_cmd,
+                on_exit=[start_parc_nav_cmd],
+            )
+        )
+    )
 
     return ld

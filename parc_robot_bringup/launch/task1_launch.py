@@ -27,7 +27,7 @@ def generate_launch_description():
     pkg_gazebo_ros = FindPackageShare(package="gazebo_ros").find("gazebo_ros")
 
     gazebo_params_file = os.path.join(pkg_path, "config/gazebo_params.yaml")
-    rviz_config_file = os.path.join(pkg_path, "rviz/parc_robot_bringup.rviz")
+    rviz_config_file = os.path.join(pkg_path, "rviz/task1.rviz")
     goal_location_sdf = os.path.join(pkg_path, "models/goal_location/model.sdf")
     world_filename = "parc_task1.world"
     world_path = os.path.join(pkg_path, "worlds", world_filename)

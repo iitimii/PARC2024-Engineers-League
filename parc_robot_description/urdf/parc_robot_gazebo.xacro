@@ -36,6 +36,42 @@
       <state_interface name='velocity'/>
       <state_interface name='position'/>
     </joint>
+
+    <transmission name="front_right_wheel_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+        <actuator name="front_right_wheel_motor" role="front_right_wheel_motor"/>
+        <joint name="front_right_wheel" role="front_right_wheel">
+          <mechanical_reduction>1.0</mechanical_reduction>
+          <offset>0.0</offset>
+        </joint>
+    </transmission>
+
+    <transmission name="rear_right_wheel_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+        <actuator name="rear_right_wheel_motor" role="rear_right_wheel_motor"/>
+        <joint name="rear_right_wheel" role="rear_right_wheel">
+          <mechanical_reduction>1.0</mechanical_reduction>
+          <offset>0.0</offset>
+        </joint>
+    </transmission>
+
+    <transmission name="front_left_wheel_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+        <actuator name="front_left_wheel_motor" role="front_left_wheel_motor"/>
+        <joint name="front_left_wheel" role="front_left_wheel">
+          <mechanical_reduction>1.0</mechanical_reduction>
+          <offset>0.0</offset>
+        </joint>
+    </transmission>
+
+    <transmission name="rear_left_wheel_transmission">
+      <plugin>transmission_interface/SimpleTransmission</plugin>
+        <actuator name="rear_left_wheel_motor" role="rear_left_wheel_motor"/>
+        <joint name="rear_left_wheel" role="rear_left_wheel">
+          <mechanical_reduction>1.0</mechanical_reduction>
+          <offset>0.0</offset>
+        </joint>
+    </transmission>
   </ros2_control>
 
   <gazebo>
@@ -45,40 +81,50 @@
     </plugin>
   </gazebo>
 
-  <gazebo reference="front_left_wheel">
-      <mu1>0.9</mu1>
-      <mu2>0.7</mu2>
-      <kp>1000000000.0</kp>
-      <kd>0.0</kd>
-      <minDepth>0.001</minDepth>
-      <fdir1>1 0 0</fdir1>
-  </gazebo>
+  <!-- <gazebo> -->
+  <!--   <mu1 value="1.0"/> -->
+  <!--   <mu2 value="0.9"/> -->
+  <!--   <kp value="10000000.0" /> -->
+  <!--   <kd value="1.0" /> -->
+  <!--   <fdir1 value="1 0 0"/> -->
+  <!--   <minDepth value="0.001" /> -->
+  <!--   <maxContacts value="64"/> -->
+  <!-- </gazebo> -->
 
-  <gazebo reference="front_right_wheel">
-      <mu1>0.9</mu1>
-      <mu2>0.7</mu2>
-      <kp>1000000000.0</kp>
-      <kd>0.0</kd>
-      <minDepth>0.001</minDepth>
-      <fdir1>1 0 0</fdir1>
-  </gazebo>
-
-  <gazebo reference="rear_left_wheel">
-      <mu1>0.9</mu1>
-      <mu2>0.7</mu2>
-      <kp>1000000000.0</kp>
-      <kd>0.0</kd>
-      <minDepth>0.001</minDepth>
-      <fdir1>1 0 0</fdir1>
-  </gazebo>
-
-  <gazebo reference="rear_right_wheel">
-      <mu1>0.9</mu1>
-      <mu2>0.7</mu2>
-      <kp>1000000000.0</kp>
-      <kd>0.0</kd>
-      <minDepth>0.001</minDepth>
-      <fdir1>1 0 0</fdir1>
-  </gazebo>
+  <!-- <gazebo reference="front_left_wheel"> -->
+  <!--     <mu1>0.9</mu1> -->
+  <!--     <mu2>0.7</mu2> -->
+  <!--     <kp>1000000000.0</kp> -->
+  <!--     <kd>0.0</kd> -->
+  <!--     <minDepth>0.001</minDepth> -->
+  <!--     <fdir1>1 0 0</fdir1> -->
+  <!-- </gazebo> -->
+  <!---->
+  <!-- <gazebo reference="front_right_wheel"> -->
+  <!--     <mu1>0.9</mu1> -->
+  <!--     <mu2>0.7</mu2> -->
+  <!--     <kp>1000000000.0</kp> -->
+  <!--     <kd>0.0</kd> -->
+  <!--     <minDepth>0.001</minDepth> -->
+  <!--     <fdir1>1 0 0</fdir1> -->
+  <!-- </gazebo> -->
+  <!---->
+  <!-- <gazebo reference="rear_left_wheel"> -->
+  <!--     <mu1>0.9</mu1> -->
+  <!--     <mu2>0.7</mu2> -->
+  <!--     <kp>1000000000.0</kp> -->
+  <!--     <kd>0.0</kd> -->
+  <!--     <minDepth>0.001</minDepth> -->
+  <!--     <fdir1>1 0 0</fdir1> -->
+  <!-- </gazebo> -->
+  <!---->
+  <!-- <gazebo reference="rear_right_wheel"> -->
+  <!--     <mu1>0.9</mu1> -->
+  <!--     <mu2>0.7</mu2> -->
+  <!--     <kp>1000000000.0</kp> -->
+  <!--     <kd>0.0</kd> -->
+  <!--     <minDepth>0.001</minDepth> -->
+  <!--     <fdir1>1 0 0</fdir1> -->
+  <!-- </gazebo> -->
 
 </robot>

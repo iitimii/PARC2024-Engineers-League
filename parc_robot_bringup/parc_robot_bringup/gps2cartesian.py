@@ -25,7 +25,7 @@ def gps_to_cartesian(origin_lat, origin_long, goal_lat, goal_long):
     azimuth = g["azi1"]  # Access azimuth
 
     # Convert polar (distance and azimuth) to x,y translation in metres
-    # (needed for ROS)by finding side lengths of a right-angle triangle.
+    # (needed for ROS) by finding side lengths of a right-angle triangle.
     # x, y and distance are adjacent,opposite and hypotenuse sides of a
     # right-angle triangle respectively
 
@@ -37,3 +37,12 @@ def gps_to_cartesian(origin_lat, origin_long, goal_lat, goal_long):
     y = -y
 
     return x, y
+    
+#print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.89997169599668, 8.899950041643248))
+#print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.89996480784759, 8.899992732812041))
+#print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.89998615003236, 8.900025054333533))
+#print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.89999368902742, 8.899977231399927))
+#print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.9000155443203, 8.899958441364666))
+#print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.900008279964915, 8.900004134541708))
+
+print(gps_to_cartesian(49.90000010022057, 8.900000304717647, 49.89996317086806, 8.900068553277569))

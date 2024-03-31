@@ -19,15 +19,16 @@ robot_base_controller:
     left_wheel_names: ['front_left_wheel', 'rear_left_wheel']
     right_wheel_names: ['front_right_wheel', 'rear_right_wheel']
 
-    wheels_per_side: 1
-    wheel_separation: 0.498
+    wheels_per_side: 2 # 1
+    # wheel_separation: 0.498
+    wheel_separation: 4.0
     wheel_radius: 0.165
 
     pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
     twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0] 
 
     enable_odom_tf: true
-    cmd_vel_timeout: 0.5 # seconds
+    cmd_vel_timeout: 0.25 # seconds
     use_stamped_vel: false
 
     wheel_separation_multiplier: 1.0

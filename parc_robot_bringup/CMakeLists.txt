@@ -7,6 +7,7 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(urdf REQUIRED)
 find_package(pluginlib REQUIRED)
+find_package(transmission_interface REQUIRED)
 
 install(
   DIRECTORY config launch models rviz worlds 
@@ -18,9 +19,12 @@ ament_python_install_package(${PROJECT_NAME})
 
 # Install Python executables
 install(PROGRAMS
+  scripts/get_param.py
   scripts/load_task1_params.py
   scripts/load_task2_params.py
+  scripts/parc_robot_routes.py
   scripts/parc_robot_nav.py
+  scripts/move_robot.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
