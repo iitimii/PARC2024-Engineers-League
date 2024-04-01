@@ -19,8 +19,7 @@
 
   <!-- gps -->
   <xacro:gps_sensor parent="base_link">
-    <!-- <origin xyz="0 0 0.2" rpy="0 0 0"/> -->
-    <origin xyz="0 0 0.2" rpy="0 0 ${pi}"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
   </xacro:gps_sensor>
 
   <!-- left_side_camera -->

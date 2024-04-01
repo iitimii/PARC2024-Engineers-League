@@ -77,7 +77,7 @@
   <gazebo>
     <plugin name='gazebo_ros2_control' filename='libgazebo_ros2_control.so'>
       <parameters>$(find parc_robot_bringup)/config/controllers.yaml</parameters>
-      <!-- <parameters>$(find parc_robot_bringup)/config/gazebo_ros2_ctl_use_sim.yaml</parameters> -->
+      <parameters>$(find parc_robot_bringup)/config/gazebo_ros2_ctl_use_sim.yaml</parameters>
     </plugin>
   </gazebo>
 
