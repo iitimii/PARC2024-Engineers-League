@@ -1,7 +1,5 @@
 import os
 
-import yaml
-
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
@@ -18,6 +16,12 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
+# PARC robot spawn pose
+spawn_x_val = "6.085959"
+spawn_y_val = "0.664742"
+spawn_z_val = "0.028982"
+spawn_yaw_val = "-3.103652"
+
 
 def generate_launch_description():
 
@@ -30,14 +34,10 @@ def generate_launch_description():
 
     gazebo_params_file = os.path.join(pkg_path, "config/gazebo_params.yaml")
     rviz_config_file = os.path.join(pkg_path, "rviz/task2.rviz")
-    # world_filename = "parc_task2.world"
-    world_filename = "world1.world"
-    world_path = os.path.join(pkg_path, "worlds", world_filename)
 
     # Launch configuration variables
     use_sim_time = LaunchConfiguration("use_sim_time")
     world = LaunchConfiguration("world")
-    route = LaunchConfiguration("route")
     speed = LaunchConfiguration("speed")
 
     # Declare launch arguments
@@ -49,27 +49,15 @@ def generate_launch_description():
 
     declare_world_cmd = DeclareLaunchArgument(
         name="world",
-        default_value=world_path,
-        # default_value="./worlds/" + world_path,
-        description="Full path to the world model to load",
-        # choices=[
-        #     "./worlds/world1.world",
-        #     "./worlds/world2.world",
-        #     "./worlds/world3.world",
-        # ],
-    )
-
-    declare_route_cmd = DeclareLaunchArgument(
-        name="route",
-        default_value="route1",
-        description="Route for robot navigation",
-        choices=["route1"],
+        default_value="world1",
+        description="World model to load",
+        choices=["world1", "world2", "world3"],
     )
 
     declare_speed_cmd = DeclareLaunchArgument(
         name="speed",
         default_value="0.1",
-        description="PARC robot speed in m/s",
+        description="PARC robot navigation speed in m/s",
     )
 
     # Start robot state publisher
@@ -80,84 +68,66 @@ def generate_launch_description():
         launch_arguments={"use_sim_time": use_sim_time}.items(),
     )
 
-    # Launch Gazebo
-    start_gazebo_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            [os.path.join(pkg_gazebo_ros, "launch", "gazebo.launch.py")]
-        ),
-        launch_arguments={
-            # world_path = os.path.join(pkg_path, "worlds", world_filename)
-            "world": world,
-            # "world": os.path.join(pkg_path, world, ".world")
-            "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file,
-        }.items(),
-    )
+    # Function to launch Gazebo, and PARC robot, dependent on the world file chosen
+    def launch_gazebo(context):
 
-    # Function to spawn entities in Gazebo with pose dependent on route chosen
-    def spawn_gazebo_entities(context):
+        nonlocal world
 
-        nonlocal route
-
+        # List of actions to be added to the launch description later
         actions = []
 
-        # Set path to route parameter yaml file
-        params_file = os.path.join(
-            pkg_path,
-            "config/",
-            "task2_" + context.launch_configurations["route"] + "_params.yaml",
+        world_file = os.path.join(
+            pkg_path, "worlds", context.launch_configurations["world"] + ".world"
         )
 
-        # Open route specific yaml file
-        if os.path.exists(params_file):
-            with open(params_file, "r") as f:
-                params = yaml.safe_load(f)
+        # World path launch configuration variable
+        world_path = LaunchConfiguration("world_path_file")
 
-                spawn_x_val = str(params["/**"]["ros__parameters"]["x"])
-                spawn_y_val = str(params["/**"]["ros__parameters"]["y"])
-                spawn_z_val = str(params["/**"]["ros__parameters"]["z"])
-                spawn_yaw_val = str(params["/**"]["ros__parameters"]["yaw"])
+        # Declare world path file launch argument
+        actions.append(
+            DeclareLaunchArgument(
+                name="world_path_file",
+                default_value=world_file,
+                description="Full path to the world model to load",
+            )
+        )
 
-                route_params_file = LaunchConfiguration("route_params_file")
+        # Launch Gazebo
+        actions.append(
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    [os.path.join(pkg_gazebo_ros, "launch", "gazebo.launch.py")]
+                ),
+                launch_arguments={
+                    "world": world_path,
+                    "extra_gazebo_args": "--ros-args --params-file "
+                    + gazebo_params_file,
+                }.items(),
+            )
+        )
 
-                # Declare route params file launch argument
-                actions.append(
-                    DeclareLaunchArgument(
-                        name="route_params_file",
-                        default_value=params_file,
-                    )
-                )
-
-                # Load route parameters file
-                actions.append(
-                    Node(
-                        package="parc_robot_bringup",
-                        executable="load_task2_params.py",
-                        parameters=[route_params_file],
-                    )
-                )
-
-                # Spawn PARC robot in Gazebo
-                actions.append(
-                    Node(
-                        package="gazebo_ros",
-                        executable="spawn_entity.py",
-                        output="screen",
-                        arguments=[
-                            "-topic",
-                            "robot_description",
-                            "-entity",
-                            "parc_robot",
-                            "-x",
-                            spawn_x_val,
-                            "-y",
-                            spawn_y_val,
-                            "-z",
-                            spawn_z_val,
-                            "-Y",
-                            spawn_yaw_val,
-                        ],
-                    )
-                )
+        # Spawn PARC robot in Gazebo
+        actions.append(
+            Node(
+                package="gazebo_ros",
+                executable="spawn_entity.py",
+                output="screen",
+                arguments=[
+                    "-topic",
+                    "robot_description",
+                    "-entity",
+                    "parc_robot",
+                    "-x",
+                    spawn_x_val,
+                    "-y",
+                    spawn_y_val,
+                    "-z",
+                    spawn_z_val,
+                    "-Y",
+                    spawn_yaw_val,
+                ],
+            )
+        )
 
         return actions
 
@@ -212,13 +182,11 @@ def generate_launch_description():
     # Declare the launch options
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_world_cmd)
-    ld.add_action(declare_route_cmd)
     ld.add_action(declare_speed_cmd)
 
     # Add any actions
-    ld.add_action(start_gazebo_cmd)
+    ld.add_action(OpaqueFunction(function=launch_gazebo))
     ld.add_action(start_rviz_cmd)
-    ld.add_action(OpaqueFunction(function=spawn_gazebo_entities))
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(start_delayed_robot_base_controller_cmd)
     ld.add_action(start_delayed_joint_broadcaster_cmd)

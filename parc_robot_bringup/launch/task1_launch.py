@@ -81,6 +81,7 @@ def generate_launch_description():
 
         nonlocal route, goal_location_sdf
 
+        # List of actions to be added to the launch description later
         actions = []
 
         # Set path to route parameter yaml file
