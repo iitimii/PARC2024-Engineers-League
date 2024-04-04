@@ -4,7 +4,7 @@ import math
 from geographiclib.geodesic import Geodesic
 
 
-def gps_to_cartesian(origin_lat, origin_long, goal_lat, goal_long):
+def gps_to_cartesian(goal_lat, goal_long):
     """
     Finds the cartesian cordinate of the gps location with respect to the gps
     reference origin which is the same as Gazebo world origin.
@@ -17,6 +17,11 @@ def gps_to_cartesian(origin_lat, origin_long, goal_lat, goal_long):
       x : x cordinate in the sensor frame in meters
       y : y cordinate in the sensor frame in meters
     """
+    
+    # Origin coordinates
+    origin_lat = 49.90000010022057
+    origin_long = 8.900000304717647
+    
     geod = Geodesic.WGS84  # define the WGS84 ellipsoid
     g = geod.Inverse(origin_lat, origin_long, goal_lat, goal_long)
 

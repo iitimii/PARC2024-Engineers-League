@@ -8,21 +8,17 @@ class GetParam(Node):
     def __init__(self):
         super().__init__("get_param")
 
-        self.declare_parameter(
-            "/load_task1_params/goal_latitude", rclpy.Parameter.Type.DOUBLE
-        )
-        self.declare_parameter(
-            "/load_task1_params/goal_longitude", rclpy.Parameter.Type.DOUBLE
-        )
+        self.declare_parameter("peg_a_latitude", rclpy.Parameter.Type.DOUBLE)
+        self.declare_parameter("peg_a_longitude", rclpy.Parameter.Type.DOUBLE)
 
-        lat = self.get_parameter("/load_task1_params/goal_latitude")
-        long = self.get_parameter("/load_task1_params/goal_longitude")
+        peg_a_lat = self.get_parameter("peg_a_latitude")
+        peg_a_long = self.get_parameter("peg_a_longitude")
 
         self.get_logger().info(
-            "goal location: %f %f"
+            "Peg A location: %f %f"
             % (
-                str(lat.value),
-                str(long.value),
+                peg_a_lat.value,
+                peg_a_long.value,
             )
         )
 

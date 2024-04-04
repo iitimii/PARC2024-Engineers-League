@@ -1,0 +1,26 @@
+/**:
+  ros__parameters:
+
+    origin_latitude: 49.90000010022057
+    origin_longitude: 8.900000304717647
+    
+    goal_latitude: 49.89995550730833
+    goal_longitude: 8.900078504470644
+    
+    peg_a_latitude: 49.90003227516326
+    peg_a_longitude: 8.899956219604325
+
+    peg_b_latitude: 49.90000470401652
+    peg_b_longitude: 8.89994553616028
+  
+    peg_c_latitude: 49.89998381891777
+    peg_c_longitude: 8.899978564376983
+
+    peg_d_latitude: 49.90001471436836
+    peg_d_longitude: 8.899990252377338
+  
+    peg_e_latitude: 49.900026830087526
+    peg_e_longitude: 8.900024049357661
+
+    peg_f_latitude: 49.89999732019855
+    peg_f_longitude: 8.900012822919749

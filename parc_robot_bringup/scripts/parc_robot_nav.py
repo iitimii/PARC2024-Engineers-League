@@ -11,7 +11,7 @@ from gazebo_msgs.srv import SetEntityState
 from geometry_msgs.msg import Pose, Twist, Vector3, Point, Quaternion
 from std_msgs.msg import String
 
-from parc_robot_routes import ROUTE
+from parc_robot_route import ROUTE
 
 
 class RobotController(Node):
