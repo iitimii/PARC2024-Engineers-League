@@ -4,6 +4,7 @@ Pan-African Robotics Competition Engineers League category project development f
 ## Package Overview
 - [`parc_robot_bringup`](./parc_robot_bringup/) : Contains config, world, scripts and launch files to bringup PARC robot for both task 1 and task 2. 
 - [`parc_robot_description`](./parc_robot_description/) : Contains the URDF description files for PARC robot, sensors, launch files for robot state publisher and
+- [`parc_robot_interfaces`](./parc_robot_interfaces/) : Contains custom messages used in the project.
 
 ***Work in Progress***
 

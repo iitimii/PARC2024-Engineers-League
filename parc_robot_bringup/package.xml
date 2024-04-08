@@ -10,6 +10,8 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>ament_cmake_python</buildtool_depend>
 
+  <depend>parc_robot_interfaces</depend>
+
   <exec_depend>parc_robot_description</exec_depend>
 
   <depend>rclpy</depend>
