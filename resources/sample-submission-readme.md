@@ -75,13 +75,13 @@ Dans cette section, vous devez donner un aperçu de la tâche du concours, décr
 Incluez une brève description de votre approche de la solution (*Cela ne devrait être que 5-7 phrases*).
 
 Écrivez la commande requise pour exécuter votre solution. Doit être dans ce format: <br>
-` ros2 run <nom-de-votre-paquet> tâche1_solution.py `
+` ros2 run <nom-de-votre-paquet> task1_solution.py `
 
 ## Tâche 2
 Incluez une brève description de votre approche de la solution (*Cela ne devrait être que 5-7 phrases*).
 
 Écrivez la commande requise pour exécuter votre solution. Doit être dans ce format: <br>
-` ros2 run <nom-de-votre-paquet> tâche2_solution.py `
+` ros2 run <nom-de-votre-paquet> task2_solution.py `
 
 ## Défis rencontrés
 
