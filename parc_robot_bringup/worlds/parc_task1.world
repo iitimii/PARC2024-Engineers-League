@@ -3582,6 +3582,7 @@
       </camera>
     </gui>
     <model name='peg'>
+      <static>1</static>
       <link name='link'>
         <pose>0 0 0.35 0 -0 0</pose>
         <inertial>
@@ -3648,6 +3649,7 @@
       <pose>1.41991 -1.68022 0 0 -0 0</pose>
     </model>
     <model name='peg_0'>
+      <static>1</static>
       <link name='link'>
         <pose>0 0 0.35 0 -0 0</pose>
         <inertial>
@@ -3714,6 +3716,7 @@
       <pose>-1.38789 -0.855946 0 0 -0 0</pose>
     </model>
     <model name='peg_1'>
+      <static>1</static>
       <link name='link'>
         <pose>0 0 0.35 0 -0 0</pose>
         <inertial>
@@ -3780,6 +3783,7 @@
       <pose>3.04076 1.489 0 0 -0 0</pose>
     </model>
     <model name='peg_2'>
+      <static>1</static>
       <link name='link'>
         <pose>0 0 0.35 0 -0 0</pose>
         <inertial>
@@ -3846,6 +3850,7 @@
       <pose>0.31704 0.60247 0 0 -0 0</pose>
     </model>
     <model name='peg_3'>
+      <static>1</static>
       <link name='link'>
         <pose>0 0 0.35 0 -0 0</pose>
         <inertial>
@@ -3912,6 +3917,7 @@
       <pose>3.58942 3.14673 0 0 -0 0</pose>
     </model>
     <model name='peg_4'>
+      <static>1</static>
       <link name='link'>
         <pose>0 0 0.35 0 -0 0</pose>
         <inertial>
