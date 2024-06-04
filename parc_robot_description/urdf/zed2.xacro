@@ -332,21 +332,21 @@
     </gazebo>
 
     <!-- IMU -->
-    <gazebo reference="zed2_left_camera_frame">
+    <!-- <gazebo reference="zed2_left_camera_frame">
       <sensor type="imu" name="zed2_imu_sensor">
         <update_rate>100</update_rate>
         <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-          <topicName>zed2/imu/data</topicName>
-          <frameName>zed2_imu_link</frameName>
-          <updateRateHZ>100.0</updateRateHZ>
-          <gaussianNoise>0.01</gaussianNoise>
-          <initialOrientationAsReference>false</initialOrientationAsReference>
-          <!-- IMU frame offset copied from an actual ZED2 camera -->
-          <xyzOffset>-0.002 -0.023 -0.002</xyzOffset>
-          <rpyOffset>0.0014025 -0.0000012 -0.0016915</rpyOffset>
+            <topicName>imu</topicName>
+            <bodyName>imu_link</bodyName>
+            <updateRateHZ>10.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frame_name>imu_link</frame_name>
+            <initialOrientationAsReference>false</initialOrientationAsReference>
         </plugin>
-      </sensor>
-    </gazebo>
+      </sensor> -->
+    <!-- </gazebo> -->
 
   </xacro:macro>
 

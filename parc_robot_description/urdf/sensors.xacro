@@ -6,6 +6,7 @@
   <xacro:include filename="$(find parc_robot_description)/urdf/zed2.xacro" />
   <xacro:include filename="$(find parc_robot_description)/urdf/gps.xacro" />
   <xacro:include filename="$(find parc_robot_description)/urdf/side_cameras.xacro" />
+  <xacro:include filename="$(find parc_robot_description)/urdf/imu.xacro" />
 
   <!-- ydlidar -->
   <xacro:ydlidar_sensor parent="base_link">
@@ -21,6 +22,11 @@
   <xacro:gps_sensor parent="base_link">
     <origin xyz="0 0 0.2" rpy="0 0 0"/>
   </xacro:gps_sensor>
+
+  <!-- imu -->
+  <xacro:imu_sensor parent="base_link">
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+  </xacro:imu_sensor>
 
   <!-- left_side_camera -->
   <xacro:left_side_camera parent="base_link">
